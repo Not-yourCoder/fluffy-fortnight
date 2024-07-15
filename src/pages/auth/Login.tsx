@@ -97,9 +97,7 @@ export const LoginForm = () => {
                         <hr />
                         <div className='text-gray-500 absolute left-[31%] px-6 top-0 bg-white text-sm text-center'>Or sign up with</div>
                     </div>
-                    <div>
-                        <GoogleSignin />
-                    </div>
+                    <GoogleSignin />
                 </div>
                 <div className=' mt-4 text-center text-sm font-medium '>
                     Dont have an account? <Link to="/signup" style={{ color: colors.orange }}>SignUp</Link>

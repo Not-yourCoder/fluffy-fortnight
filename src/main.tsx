@@ -11,6 +11,7 @@ import TrackingPage from './pages/TrackingPage.tsx'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { StepperProvider } from './context/stepperContext.tsx'
 import { AnimatePresence } from 'framer-motion'
+import NotFoundPage from './pages/error/NotFound.tsx'
 
 
 const queryClient = new QueryClient()
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         </AnimatePresence>
       </StepperProvider>
     </QueryClientProvider>,
-    errorElement: <div>404 Not found</div>,
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: "/login",

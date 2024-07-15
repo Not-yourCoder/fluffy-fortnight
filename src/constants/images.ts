@@ -6,4 +6,5 @@ export const images = {
   google: "/Button.svg",
   loginSuccess: "/loginsuccess.svg",
   clockFace: "/ClockFace.jpg",
+  notFound: "/404.gif",
 };
