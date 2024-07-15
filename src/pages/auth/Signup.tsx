@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { colors } from '../../constants/color';
 import CustomCheckbox from '../../components/ui/CheckBox';
+import SlideIn from '../../components/wrappers/SlideIn';
 
 
 interface SignupFormValues {
@@ -43,9 +44,9 @@ export const SignupForm = () => {
         setSubmitting(false);
     };
     return (
-        <div className='my-[60px] mx-6'>
+        <SlideIn className='my-[90px] mx-6'>
             <h1 className='text-4xl font-semibold'>Create your new <br /> account</h1>
-            <p className='my-4 text-sm text-gray-500'>Create an account to start looking for the food you like</p>
+            <p className='my-4 text-md text-gray-500'>Create an account to start looking for the food you like</p>
             <div className='gap-6 items-center grid'>
                 <Formik
                     initialValues={{
@@ -70,7 +71,7 @@ export const SignupForm = () => {
                     onSubmit={submit}
                 >
 
-                    <Form className='w-[327px] flex flex-col gap-3 mx-auto'>
+                    <Form className='w-full md:w-[327px] flex flex-col gap-3 mx-auto'>
                         <div>
                             <label className='font-medium text-sm'>Email Address</label>
                             <Field
@@ -98,12 +99,12 @@ export const SignupForm = () => {
                         </div>
 
                         <div>
-                            <label className='font-medium text-sm'>Password</label>
+                            <label className='font-semibold text-sm'>Password</label>
                             <div className='flex mt-2 items-center border border-gray-300 rounded-lg'>
                                 <Field
                                     name="password"
                                     type={showPassword ? "text" : "password"}
-                                    className="w-full p-4 rounded-lg font-medium text-sm focus:outline-none focus:ring-0"
+                                    className="w-full p-4 rounded-lg font-semibold text-sm focus:outline-none focus:ring-0"
                                 />
                                 {showPassword ? <FaEye className=' mx-4 text-xl' onClick={() => setShowpassword(!showPassword)} /> : <FaEyeSlash className='mx-4 text-xl' onClick={() => setShowpassword(!showPassword)} />}
 
@@ -116,17 +117,20 @@ export const SignupForm = () => {
                             <CustomCheckbox checked={checked} setChecked={setChecked} />
                         </div>
 
-                        <button type="submit" style={{ background: colors.orange }} className=" p-4 mt-4 text-sm text-white font-medium rounded-full" onClick={() => console.log("hi")}>
+                        <button type="submit" style={{ background: colors.orange }} className=" p-4 mt-4 text-sm text-white font-medium rounded-full">
                             Register
                         </button>
                     </Form>
                 </Formik >
-                <div className='text-gray-500 text-sm text-center'>Or sign up with</div>
+                <div className='relative p-[0.6rem] '>
+                    <hr />
+                    <div className='text-gray-500 absolute left-[31%] px-6 top-0 bg-white text-sm text-center'>Or sign up with</div>
+                </div>
                 <div>
                     <GoogleSignin />
                 </div>
             </div>
             <div className='text-center text-sm mt-8 text-medium'>Have an account?{" "}<Link to="/login" style={{ color: colors.orange }}>Sign In</Link></div>
-        </div>
+        </SlideIn>
     );
 };

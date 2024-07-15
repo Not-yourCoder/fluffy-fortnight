@@ -3,6 +3,7 @@ import { auth } from '../../firebase'
 import { images } from '../../constants/images';
 import { colors } from '../../constants/color';
 import { logOut } from '../../utils/helpers';
+import SlideIn from '../../components/wrappers/SlideIn';
 
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
     return null
   }
   return (
-    <div className='h-screen relative' style={{ backgroundImage: `url(${images.obg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <SlideIn className='h-screen relative' style={{ backgroundImage: `url(${images.obg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className='w-full bg-white  absolute bottom-0 rounded-t-[20px]'>
         <div className='flex flex-col items-center m-6'>
           <img src={images.loginSuccess} className='w-[200px] mx-auto my-6' />
@@ -30,7 +31,7 @@ const Home = () => {
           <p onClick={handleLogout} className='text-gray-400 mb-12 text-sm font-medium'>Logout</p>
         </div>
       </div>
-    </div>
+    </SlideIn>
   )
 }
 

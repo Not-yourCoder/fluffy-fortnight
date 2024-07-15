@@ -10,13 +10,20 @@ import PrivateRoute from './routes/PrivateRoute.tsx'
 import TrackingPage from './pages/TrackingPage.tsx'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { StepperProvider } from './context/stepperContext.tsx'
+import { AnimatePresence } from 'framer-motion'
 
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <QueryClientProvider client={queryClient}><StepperProvider><App /></StepperProvider></QueryClientProvider>,
+    element: <QueryClientProvider client={queryClient}>
+      <StepperProvider>
+        <AnimatePresence>
+          <App />
+        </AnimatePresence>
+      </StepperProvider>
+    </QueryClientProvider>,
     errorElement: <div>404 Not found</div>,
     children: [
       {

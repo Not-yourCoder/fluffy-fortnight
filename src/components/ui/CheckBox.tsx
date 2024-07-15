@@ -12,15 +12,15 @@ const CustomCheckbox = ({ checked, setChecked }: Props) => {
     };
 
     return (
-        <label className="flex items-start gap-1 cursor-pointer">
+        <label className="flex items-start gap-2 cursor-pointer">
             <div
-                className={`w-5 h-5 flex items-center justify-center border-2 rounded ${checked ? 'bg-orange-500 border-orange-500' : 'border-gray-400'
+                className={`w-6 h-6 flex items-center justify-center border-2 rounded ${checked ? 'bg-orange-500 border-orange-500' : 'border-gray-400'
                     }`}
                 onClick={toggleCheckbox}
             >
                 {checked && (
                     <svg
-                        className="w-5 h-5 text-white"
+                        className="w-6 h-6 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ const CustomCheckbox = ({ checked, setChecked }: Props) => {
                     </svg>
                 )}
             </div>
-            <span className='text-sm font-medium'>I Agree with <span style={{ color: colors.orange }}>Terms of Service </span>and<span style={{ color: colors.orange }} > Privacy Policy</span> </span>
+            <span className='text-md font-medium'>I Agree with <span style={{ color: colors.orange }}>Terms of Service </span>and<span style={{ color: colors.orange }} > Privacy Policy</span> </span>
         </label>
     );
 };

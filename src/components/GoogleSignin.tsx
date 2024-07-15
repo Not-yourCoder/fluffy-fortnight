@@ -21,7 +21,7 @@ const GoogleSignin = () => {
         }
     }
     return (
-        <div onClick={signUpGoogle}>
+        <div className="my-3" onClick={signUpGoogle}>
             <img src={images.google} className="mx-auto"/>
         </div>
     )
